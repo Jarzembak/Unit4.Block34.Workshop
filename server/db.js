@@ -78,6 +78,12 @@ const fetchRestaurants = async () => {
     return response.rows;
 };
 
+const fetchReservations = async () => {
+    const SQL = /*SQL*/ `SELECT * FROM reservation;`;
+    const response = await client.query(SQL);
+    return response.rows;
+}
+
 const seed = async () => {
     await Promise.all([
         createCustomer("Lee"),
@@ -143,4 +149,11 @@ module.exports = {
     client,
     createTables,
     seed,
+    createCustomer,
+    createRestaurant,
+    createReservation,
+    destroyReservation,
+    fetchCustomers,
+    fetchRestaurants,
+    fetchReservations
 };
