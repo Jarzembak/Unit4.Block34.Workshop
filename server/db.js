@@ -97,50 +97,50 @@ const seed = async () => {
     const restaurants = await fetchRestaurants();
     console.log("restaurants seeded", restaurants);
 
-//     const makeReservations = [
-//             {
-//                 date: "2024-03-01",
-//                 party_count: 2,
-//                 restaurant_id: restaurants[0].id,
-//                 customer_id: customers[0].id,
-//             },
-//             {
-//                 date: "2024-03-02",
-//                 party_count: 4,
-//                 restaurant_id: restaurants[1].id,
-//                 customer_id: customers[1].id,
-//             },
-//             {
-//                 date: "2024-03-03",
-//                 party_count: 6,
-//                 restaurant_id: restaurants[2].id,
-//                 customer_id: customers[2].id,
-//             },
-//             {
-//                 date: "2024-03-04",
-//                 party_count: 8,
-//                 restaurant_id: restaurants[3].id,
-//                 customer_id: customers[3].id,
-//             },
-//             {
-//                 date: "2024-03-05",
-//                 party_count: 10,
-//                 restaurant_id: restaurants[4].id,
-//                 customer_id: customers[4].id,
-//             }
-//         ];
-//     makeReservations.map((reservation) =>
-//                 createReservation(
-//                     reservation.date,
-//                     reservation.party_count,
-//                     reservation.restaurant_id,
-//                     reservation.customer_id
-//                 )
-//             )
+    //     const makeReservations = [
+    //             {
+    //                 date: "2024-03-01",
+    //                 party_count: 2,
+    //                 restaurant_id: restaurants[0].id,
+    //                 customer_id: customers[0].id,
+    //             },
+    //             {
+    //                 date: "2024-03-02",
+    //                 party_count: 4,
+    //                 restaurant_id: restaurants[1].id,
+    //                 customer_id: customers[1].id,
+    //             },
+    //             {
+    //                 date: "2024-03-03",
+    //                 party_count: 6,
+    //                 restaurant_id: restaurants[2].id,
+    //                 customer_id: customers[2].id,
+    //             },
+    //             {
+    //                 date: "2024-03-04",
+    //                 party_count: 8,
+    //                 restaurant_id: restaurants[3].id,
+    //                 customer_id: customers[3].id,
+    //             },
+    //             {
+    //                 date: "2024-03-05",
+    //                 party_count: 10,
+    //                 restaurant_id: restaurants[4].id,
+    //                 customer_id: customers[4].id,
+    //             }
+    //         ];
+    //     makeReservations.map((reservation) =>
+    //                 createReservation(
+    //                     reservation.date,
+    //                     reservation.party_count,
+    //                     reservation.restaurant_id,
+    //                     reservation.customer_id
+    //                 )
+    //             )
 };
 
 module.exports = {
     client,
     createTables,
-    seed
+    seed,
 };
