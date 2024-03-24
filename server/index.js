@@ -30,3 +30,21 @@ router.get("/customers", async (req, res, next) => {
         next(error);
     }
 });
+
+router.get("/restaurants", async (req, res, next) => {
+    try {
+        const restaurants = await fetchRestaurants();
+        res.status(200).send(restaurants);
+    } catch (error) {
+        next(error);
+    }
+});
+
+router.get("/reservations", async (req, res, next) => {
+    try {
+        const reservations = await fetchReservations();
+        res.status(200).send(reservations);
+    } catch (error) {
+        next(error);
+    }
+});
