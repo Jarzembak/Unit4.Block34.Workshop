@@ -61,7 +61,7 @@ const createReservation = async (
     return response.rows[0];
 };
 
-const destroyReservation = async ({ customer_id, id }) => {
+const destroyReservation = async ( customer_id, id ) => {
     const SQL = /*SQL*/ `DELETE from reservation where customer_id=$1 AND id=$2;`;
     await client.query(SQL, [customer_id, id]);
 };

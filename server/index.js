@@ -48,3 +48,22 @@ router.get("/reservations", async (req, res, next) => {
         next(error);
     }
 });
+
+router.post("/customers/:id/reservations", async (req, res, next) => {
+    try {
+        const { date, party_count, restaurant_id } = req.body;
+        const reservation = await createReservation(date, party_count, restaurant_id, req.params.id);
+        res.status(201).send(reservation);
+    } catch (error) {
+        next(error);
+    }
+});
+
+router.delete("/customers/:customer_id/reservations/:id", async (req, res, next) => {
+    try {
+        await destroyReservation(req.params.customer_id, req.params.id);
+        res.sendStatus(204);
+    } catch (error) {
+        next(error);
+    }
+})
