@@ -7,6 +7,7 @@ const router = require('express').Router();
 
 app.use(express.json());
 app.use(morgan("combined"));
+app.use('/api', router);
 
 const init = async () => {
     await client.connect();
@@ -15,14 +16,17 @@ const init = async () => {
     console.log("tables created");
     await seed();
     console.log("database seeded");
+    app.listen(process.env.PORT, () => {
+        console.log(`server is listening on port ${process.env.PORT}`);
+    });
 };
 init();
 
-// router.get("/customers", async (req, res, next) => {
-//     try {
-//         const customers = await fetchCustomers();
-//         res.status(200).send(customers);
-//     } catch (error) {
-//         next(error);
-//     }
-// });
+router.get("/customers", async (req, res, next) => {
+    try {
+        const customers = await fetchCustomers();
+        res.status(200).send(customers);
+    } catch (error) {
+        next(error);
+    }
+});
